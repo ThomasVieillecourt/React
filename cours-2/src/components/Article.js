@@ -6,6 +6,7 @@ const Article = ({ article }) => {
   const [editContent, setEditContent] = useState("");
 
   const dateFormater = (date) => {
+    // permet de convertir la date au format FR
     let newDate = new Date(date).toLocaleDateString("fr-FR", {
       year: "numeric",
       month: "long",
@@ -41,6 +42,8 @@ const Article = ({ article }) => {
     <div
       className="article"
       style={{ background: isEditing ? "#f3feff" : "white" }}
+
+      //   Ajouter du style conditionnel via React
     >
       <div className="card-header">
         <h3>{article.author}</h3>

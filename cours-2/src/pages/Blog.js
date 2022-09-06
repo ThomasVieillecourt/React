@@ -23,6 +23,7 @@ const Blog = () => {
     if (content.length < 140) {
       setError(true);
     } else {
+      // Lors du Submit on ajoute via le axios.post les éléments à la bdd
       axios.post("http://localhost:3004/articles", {
         author,
         content,
