@@ -1,0 +1,41 @@
+.form-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 300px;
+    height: 24px;
+    padding: 0 4px;
+  }
+
+  label {
+    padding: 12px 0 0 0;
+  }
+
+  textarea {
+    width: 300px;
+    resize: none;
+    height: 100px;
+    padding: 4px;
+  }
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+#btn-form {
+  margin: 12px auto;
+  width: auto;
+}
+
+.form-message {
+  color: rgb(31, 177, 31);
+}
+
+.error {
+  color: rgb(180, 25, 25);
+}

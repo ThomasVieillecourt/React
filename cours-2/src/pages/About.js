@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "../components/Form";
 import Logo from "../components/Logo";
 import Navigation from "../components/Navigation";
 
@@ -47,6 +48,8 @@ const About = () => {
         temporibus nam dolore quos! Id voluptatibus ipsam soluta atque iure
         expedita facere alias. Provident assumenda est fugit.
       </p>
+
+      <Form />
     </div>
   );
 };
