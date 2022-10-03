@@ -4,13 +4,13 @@ import Card from "../components/Card";
 import {
   faArrowUp,
   faArrowDown,
-  faArrowLeftRotate,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Liste = () => {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("code");
+  const [search, setSearch] = useState("marvel");
   const [sortGoodBad, setSortGoodBad] = useState(null);
 
   useEffect(() => {
@@ -58,9 +58,9 @@ const Liste = () => {
             className="btn-reset"
             id="reset"
             type="submit"
-            onClick={() => window.location.reload()}
+            onClick={() => setSortGoodBad("dateToDate")}
           >
-            <FontAwesomeIcon icon={faArrowLeftRotate} />
+            <FontAwesomeIcon icon={faStar} />
           </button>
         </div>
       </div>
@@ -72,6 +72,8 @@ const Liste = () => {
                 return b.vote_average - a.vote_average;
               } else if (sortGoodBad === "badToGood") {
                 return a.vote_average - b.vote_average;
+              } else if (sortGoodBad === "dateToDate") {
+                return new Date(b.release_date) - new Date(a.release_date);
               }
             })
             .map((film, index) => (

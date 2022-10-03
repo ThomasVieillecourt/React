@@ -71,10 +71,32 @@ const Card = ({ film }) => {
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
+  const addStorage = () => {
+    let storedData = window.localStorage.movies
+      ? window.localStorage.movies.split(",")
+      : [];
+
+    if (!storedData.includes(film.id.toString())) {
+      storedData.push(film.id);
+    }
+    window.localStorage.movies = storedData;
+  };
+
+  const undoStorage = () => {
+    let storedData = window.localStorage.movies.split(",");
+
+    let newData = storedData.filter((id) => id != film.id);
+    window.localStorage.movies = newData;
+  };
+
   return (
     <li className="card">
       <img
-        src={"https://image.tmdb.org/t/p/original/" + film.poster_path}
+        src={
+          film.poster_path
+            ? "https://image.tmdb.org/t/p/original" + film.poster_path
+            : "../../public/img/poster.jpg"
+        }
         alt={film.original_title}
       />
       <h2>{film.title}</h2>
@@ -86,9 +108,33 @@ const Card = ({ film }) => {
           <FontAwesomeIcon icon={faStar} />
         </span>
       </h4>
-      <ul>{film.genre_ids ? genreFinder() : null}</ul>
-      {film.overview ? <p>{film.overview}</p> : null}
-      <input type="button" className="btn" value="J'adore" />
+      <ul>
+        {film.genre_ids
+          ? genreFinder()
+          : film.genres.map((genre) => <li key={genre}>{genre.name}</li>)}
+      </ul>
+      {film.overview ? <p>{film.overview}</p> : ""}
+
+      {film.genre_ids ? (
+        <input
+          type="button"
+          className="btn"
+          value="J'adore"
+          onClick={() => {
+            addStorage();
+          }}
+        />
+      ) : (
+        <input
+          type="button"
+          className="btn"
+          value="Retirer de la liste"
+          onClick={() => {
+            undoStorage();
+            window.location.reload();
+          }}
+        />
+      )}
     </li>
   );
 };
