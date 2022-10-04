@@ -85,12 +85,12 @@ const Card = ({ film }) => {
   const undoStorage = () => {
     let storedData = window.localStorage.movies.split(",");
 
-    let newData = storedData.filter((id) => id != film.id);
+    let newData = storedData.filter((id) => id !== film.id);
     window.localStorage.movies = newData;
   };
 
   return (
-    <li className="card">
+    <li className="card" style={{ borderRadius: "0px" }}>
       <img
         src={
           film.poster_path
@@ -119,7 +119,7 @@ const Card = ({ film }) => {
         <input
           type="button"
           className="btn"
-          value="J'adore"
+          value="Ajouter à ma collection"
           onClick={() => {
             addStorage();
           }}
@@ -128,7 +128,7 @@ const Card = ({ film }) => {
         <input
           type="button"
           className="btn"
-          value="Retirer de la liste"
+          value="Retirer de ma collection"
           onClick={() => {
             undoStorage();
             window.location.reload();

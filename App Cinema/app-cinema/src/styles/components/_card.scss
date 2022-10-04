@@ -11,7 +11,7 @@
   max-width: 280px;
   height: 620px;
   width: 100%;
-  background: #060d2c;
+  background: #131313;
   border-radius: 35px;
   margin: 5px;
   padding: 26px 15px 30px;
@@ -23,7 +23,7 @@
     position: absolute;
     height: 90px;
     width: 100%;
-    background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, $black 55%);
+    background: linear-gradient(180deg, rgba(195, 34, 34, 0) 0%, #131313 55%);
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
@@ -37,9 +37,7 @@
     object-position: top;
     display: block;
     margin: 0 auto;
-    border-radius: 50px;
-    box-shadow: 0 8px 1px rgba(255, 255, 255, 0.1),
-      0 16px 1px rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
   }
   h2 {
     margin: 24px 0 0px;
@@ -94,7 +92,7 @@
     }
   }
   .btn {
-    background: #546fe4;
+    background: #212040;
     color: $white;
     font-size: 1rem;
     position: absolute;
@@ -108,10 +106,11 @@
     cursor: pointer;
     transition: 0.2s;
     z-index: 50;
+    border: none;
 
     &:hover {
       background: $white;
-      box-shadow: 0 0 10px #546ee4d2;
+      box-shadow: 0 0 10px #131313;
       font-size: 1.1rem;
       color: $color-2;
     }

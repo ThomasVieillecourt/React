@@ -20,12 +20,12 @@ const Navigation = () => {
 
           <li>
             <NavLink
-              to="/coups-de-coeur"
+              to="/collection"
               className={(nav) =>
                 nav.isActive ? "nav-active" : "nav-inactive"
               }
             >
-              Coups de coeur
+              Ma collection
             </NavLink>
           </li>
         </ul>
