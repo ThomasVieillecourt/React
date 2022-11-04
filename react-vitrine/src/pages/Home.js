@@ -12,6 +12,11 @@ const Home = () => {
         <SocialNetwork />
         <div className="home-main">
           <div className="main-content">
+            <img
+              src="./assets/img/Saly-10.png"
+              alt="illustration 3D homme sur ordinateur"
+              id="home3D"
+            />
             <h1>Thomas</h1>
             <DynamicText />
           </div>

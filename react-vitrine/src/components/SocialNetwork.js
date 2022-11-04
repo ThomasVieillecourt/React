@@ -20,27 +20,33 @@ const SocialNetwork = () => {
     <div className="social-network">
       <ul className="content">
         <a
-          href="http///www.twitter.com"
+          href="https://twitter.com/viei_thomas"
           target="_blank"
           rel="noopener noreferrer"
           className="hover"
           onMouseOver={anim}
         >
           <li>
-            <i className="fab fa-twitter"></i>
+            <img
+              src="./assets/img/twitter3D.png"
+              alt="icone twitter"
+              width={"40px"}
+            />
           </li>
         </a>
 
         <a
-          href="http///www.instagram.com"
+          href="https://www.behance.net/thomasvieillecourt"
           target="_blank"
           rel="noopener noreferrer"
           className="hover"
           onMouseOver={anim}
         >
-          <li>
-            <i className="fab fa-instagram"></i>
-          </li>
+          <img
+            src="./assets/img/behance.png"
+            alt="icone behance"
+            width={"40px"}
+          />
         </a>
 
         <a
@@ -50,9 +56,11 @@ const SocialNetwork = () => {
           className="hover"
           onMouseOver={anim}
         >
-          <li>
-            <i className="fab fa-github"></i>
-          </li>
+          <img
+            src="./assets/img/github.png"
+            alt="icone github"
+            width={"40px"}
+          />
         </a>
       </ul>
     </div>

@@ -43,7 +43,7 @@ const Project = ({ projectNumber }) => {
             rel="noopener noreferrer"
             className="hover"
           >
-            <span className="button">Voir le site</span>
+            <span className="button">Voir le projet</span>
           </a>
         </div>
       </div>

@@ -12,6 +12,11 @@ const Projet1 = () => {
         <Logo />
         <Project projectNumber={0} />
         <Buttons left={"/"} right={"/projet-2"} />
+        <img
+          src="./assets/img/4.png"
+          alt="illustration 3D curseur"
+          id="cursor"
+        />
       </div>
     </main>
   );
