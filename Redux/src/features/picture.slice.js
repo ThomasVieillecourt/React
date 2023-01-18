@@ -13,10 +13,14 @@ export const picturesSlice = createSlice({
       state.pictures.push(action.payload);
     },
     editPicture: (state, action) => {
+      // On map parce qu'on retourne un tableau avec le même nombre d'élément et on en modifie qu'un seul
       state.pictures = state.pictures.map((pic) => {
+        // on fait un payload en tableau pour pouvoir donner la nouvelle data mais ausis l'id de l'objet qu'on modifie
         if (pic.id === action.payload[1]) {
           return {
+            // retourne le tableau pic normal
             ...pic,
+            // retourne le changement dans la propriété artiste
             artist: action.payload[0],
           };
         } else {
