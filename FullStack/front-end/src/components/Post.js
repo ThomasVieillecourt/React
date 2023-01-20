@@ -2,11 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DeletePost from "./DeletePost";
 import LikePost from "./LikePost";
+import { useDispatch, useSelector } from "react-redux";
+import { editPosts } from "../features/post.slice";
 
-const Post = ({ post, userId }) => {
+const Post = ({ post }) => {
   const [isAuthor, setIsAuthor] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [newMessage, setNewMessage] = useState("");
+  const userId = useSelector((state) => state.user.userId);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (post.author === userId) {
@@ -21,6 +25,7 @@ const Post = ({ post, userId }) => {
       axios.put("http://localhost:5000/post/" + post._id, {
         message: newMessage,
       });
+      dispatch(editPosts([newMessage, post._id]));
     }
   };
 
@@ -61,7 +66,7 @@ const Post = ({ post, userId }) => {
       )}
 
       <div className="icons-part">
-        <LikePost post={post} userId={userId} />
+        <LikePost post={post} />
         {isAuthor && (
           <div className="update-delete-icons">
             <span
