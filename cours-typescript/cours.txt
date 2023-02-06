@@ -1,0 +1,49 @@
+télécahrger TypeScript : npm i TypeScript // Sous React npx create-react-app nomApp --template typescript
+
+TypeScript n'est pas compris par le naviguateur, il doit être compiler => tsc nomDuFichier (TypeScriptCompiler)
+
+Language a utiliser sur les gros projets
+
+Il permet de spécifier sur chaque variable le type de donnée qu'on attend (var:type) s'il y a plusieurs type (let numOrString:number | string)
+
+pour se loger les erreurs (tsc --init) => (tsc -w) permet de "watch" chaque changement
+
+Pour les objets et définir le type des éléments on créé une interface
+interface Player {
+    id: number,
+    name: string,
+    age?:number,  => le ? sert si on ne connait pas forcément la variable
+}
+
+
+Pour les fonctions :void signifie qu'on attend rien en valeur de return
+
+Tuple : typer les valeurs qu'on attend dans un tableau : 
+interface User {
+  name: string;
+  attributes: [number | boolean, string]; => Tuple
+}
+
+const user1: User = {
+  name: "Thomas",
+  attributes: [false, "author"],
+};
+
+
+Enum : Permet de remplacer les chiffres sortis du nul part par des valeurs ex: 
+enum Role {  => Enum
+  ADMIN,
+  PREMIUM,
+  BASIC,
+}
+interface User {
+  name: string;
+  attributes: [number | boolean, string];
+  role: Role;  => Enum
+}
+
+const user1: User = {
+  name: "Thomas",
+  attributes: [false, "author"],
+  role: Role.ADMIN,
+};
